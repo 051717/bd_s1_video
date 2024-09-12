@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video en pantalla completa</title>
+    <style>
+        /* Estilo para el video en pantalla completa */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+    <video id="myVideo" autoplay muted loop>
+        <source src="gif_01.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+    </video>
+
+    <script>
+        // El video se reproduce automáticamente al cargar la página
+        window.onload = function() {
+            var video = document.getElementById('myVideo');
+            video.play();
+        };
+    </script>
+
+</body>
+</html>
